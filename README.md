@@ -137,7 +137,7 @@ sudo update-rc.d minecraft-grub defaults
 
 #### ...with systemd
 
-- Edit `./minegrub-update.service` to use `/boot/grub2/` on line 5 if applicable
+- Edit `./minegrub-update.service` to use `/boot/grub2/` on line 8 if applicable
 - Copy `./minegrub-update.service` to `/etc/systemd/system`
 - Enable the service: `systemctl enable minegrub-update.service`
 - If it's not updating after rebooting (it won't update on the first reboot because it updates after you boot into your system), check `systemctl status minegrub-update.service` for any errors (for example if pillow isn't installed in the correct scope)
