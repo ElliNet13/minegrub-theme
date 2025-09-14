@@ -1,9 +1,12 @@
 [Unit]
-Description=minegrub theme splash update service
-After=hibernate.target
+Description=Minegrub theme splash update service
+DefaultDependencies=no
+Before=shutdown.target hibernate.target reboot.target
 
 [Service]
+Type=oneshot
 ExecStart=/usr/bin/python3 /boot/grub/themes/minegrub/update_theme.py
+RemainAfterExit=yes
 
 [Install]
-WantedBy=multi-user.target hibernate.target
+WantedBy=shutdown.target hibernate.target reboot.target
